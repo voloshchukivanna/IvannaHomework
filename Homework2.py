@@ -53,7 +53,7 @@ print(n + 2 - (n%2))
 
 #5
 x = 3.5
-print(s%1)
+print(x%1)
 
 #6
 a = float(34.345)
