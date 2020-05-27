@@ -1,5 +1,2 @@
-Ivanna
-
-test
-
-1
+a = "Ivanna Voloshchuk qa    "
+a.count(" ")
