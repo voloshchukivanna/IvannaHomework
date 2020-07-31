@@ -1,9 +1,4 @@
-Ivanna
+x = input ('Enter number:    ')
+print(x)
 
-Voloshchuk
-
-test
-
-
-2112 test bla bla
 

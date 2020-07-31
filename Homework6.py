@@ -65,6 +65,47 @@ with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
     server.sendmail(sender_email, receiver_email, message)
 
 
+#Task1
+#1
+ import requests
+ import _json
+
+ url='http://pulse-rest-testing.herokuapp.com/'
+ r = requests.get(url)
+ print(r.status_code)
+
+'''создали книгу'''
+ book_dict = {
+       'title': "test book 2",
+       'author': "Ivanna Voloshchuk"
+   }
+ resp = requests.post(url+'books/', data=book_dict)
+ print(resp.status_code)
+ req_dict = resp.json()
+ for book in req_dict:
+     print(req_dict['id'], req_dict['title'])
+ book_id=req_dict['id']
+
+ print(req_dict)
+
+'''редактируем книгу'''
+ r = requests.get(url)
+ print(r.status_code)
+ book_dict = {
+
+     'title': 'test book 2 change',
+     'author': 'Ivanna Voloshchuk'
+     }
+ resp = requests.put(url+'books/'+ str(book_id), data=book_dict)
+ print(resp.status_code)
+ req_dict = resp.json()
+ for book in req_dict:
+     print(req_dict['id'], req_dict['title'])
+
+ print(req_dict)
+
+'''удаляем книгу'''
+del_book = request.delete(url + 'books/' + str(book_id))
 
 
 

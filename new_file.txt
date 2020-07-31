@@ -1,2 +1,2 @@
-a = "Ivanna Voloshchuk qa    "
-a.count(" ")
+a = "IvannaVoloshchuk"
+a.isdigit()
