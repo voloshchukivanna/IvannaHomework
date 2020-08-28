@@ -2,9 +2,14 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
+import time
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 driver = webdriver.Chrome()
+driver.implicitly_wait(5)
+# wait = WebDriverWait(driver, 5)
 driver.get("https://dou.ua/")
 
 # button = driver.find_element_by_name("q").send_keys('Python')
@@ -30,11 +35,16 @@ def is_button_present(by, value):
 # search_button = is_button_present("q")
 search_button = is_button_present(By.NAME, "q")
 search_button.send_keys("Python")
-search_button.click() # у меня почему-то в строке поиске пишет Python, но не кликает
+time.sleep(5)
+search_button.send_keys(Keys.ENTER)
+
+# button = wait.until(EC.element_to_be_clickable(By.ID, )
+# button.click()
+# time.sleep(5)
 
 links = driver.find_elements(By.PARTIAL_LINK_TEXT, "Online")
-print(len(links)) #из-за того, что не кликает с строки 33, то неправильно считает количество "Online"
+print(len(links))
 
-# driver.quit()
-# driver.close()
+driver.quit()
+driver.close()
 
