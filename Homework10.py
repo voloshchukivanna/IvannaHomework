@@ -16,38 +16,38 @@ dropdown = dr.find_element(By.TAG_NAME, 'select')
 dropdown.click()
 time.sleep(2)
 
-dropdown.find_element(By.XPATH, '/option[3]')
+dropdown.find_element(By.XPATH, './option[3]')
 dropdown.click()
 time.sleep(2)
 
-'''Task2 Выбор из выпадающего меню (Select)'''
-dr = webdriver.Chrome()
-dr.get("https://www-archive.mozilla.org/projects/ui/accessibility/unix/testcase/html/")
-
-select = Select(dr.find_element(By.ID, 'components'))
-time.sleep(2)
-select.select_by_value('Build config')
-time.sleep(2)
-
-'''Task3 Checkbox ?????? (не разобралась до конца)'''
-dr = webdriver.Chrome()
-dr.get("https://www-archive.mozilla.org/projects/ui/accessibility/unix/testcase/html/")
-
-checkboxes = dr.find_elements_by_xpath('//*[@id="radio2"]')
-for checkbox in checkboxes:
-    if checkbox.isSelected():
-        checkbox.click()
-
-'''Task4 Action'''
-dr = webdriver.Chrome()
-actions = webdriver.ActionChains(dr)
-dr.get("https://novaposhta.ua/")
-
-
-dropdown = dr.find_element(By.XPATH, '//*[@id="top_menu"]/li[3]/a')
-sub_menu = dr.find_element(By.XPATH, '//*[@id="top_menu"]/li[3]/ul/li[3]/a')
-
-actions.move_to_element(dropdown).perform()
-actions.move_to_element(sub_menu).perform()
-actions.click(sub_menu)
-actions.perform()
+# '''Task2 Выбор из выпадающего меню (Select)'''
+# dr = webdriver.Chrome()
+# dr.get("https://www-archive.mozilla.org/projects/ui/accessibility/unix/testcase/html/")
+#
+# select = Select(dr.find_element(By.ID, 'components'))
+# time.sleep(2)
+# select.select_by_value('Build config')
+# time.sleep(2)
+#
+# '''Task3 Checkbox ?????? (не разобралась до конца)'''
+# dr = webdriver.Chrome()
+# dr.get("https://www-archive.mozilla.org/projects/ui/accessibility/unix/testcase/html/")
+#
+# checkboxes = dr.find_elements_by_xpath('//*[@id="radio2"]')
+# for checkbox in checkboxes:
+#     if checkbox.is_Selected():
+#         checkbox.click()
+#
+# '''Task4 Action'''
+# dr = webdriver.Chrome()
+# actions = webdriver.ActionChains(dr)
+# dr.get("https://novaposhta.ua/")
+#
+#
+# dropdown = dr.find_element(By.XPATH, '//*[@id="top_menu"]/li[3]/a')
+# sub_menu = dr.find_element(By.XPATH, '//*[@id="top_menu"]/li[3]/ul/li[3]/a')
+#
+# actions.move_to_element(dropdown).perform()
+# actions.move_to_element(sub_menu).perform()
+# actions.click(sub_menu)
+# actions.perform()
