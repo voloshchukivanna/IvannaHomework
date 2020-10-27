@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 dr = webdriver.Chrome()
 dr.implicitly_wait(2)
-# wait = WebDriverWait(dr, 3)
+wait = WebDriverWait(dr, 3)
 dr.get('https://www.google.com.ua/')
 
 el = dr.find_element(By.NAME, "q")
